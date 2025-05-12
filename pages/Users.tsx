@@ -5,7 +5,7 @@ import { SearchBar } from "../components/Users/SearchBar";
 import { UserCard } from "../components/Users/UserCard";
 import { FooterUsers } from "@/components/Users/FooterUsers";
 import { CreateUser } from "@/components/Users/CreateUser";
-import { Noto_Serif } from "next/font/google";
+import { notoSerif } from "@/assets/font";
 
 // Mock data for users
 const mockUsers = [
@@ -76,12 +76,6 @@ const mockUsers = [
     isActive: true,
   },
 ];
-
-const notoSerif = Noto_Serif({
-  subsets: ['latin'],
-  variable: '--font-noto-serif',
-  display: 'swap',
-})
 
 const Users = () => {
   const [searchQuery, setSearchQuery] = useState("");
