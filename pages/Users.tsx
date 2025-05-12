@@ -7,7 +7,6 @@ import { FooterUsers } from "@/components/Users/FooterUsers";
 import { CreateUser } from "@/components/Users/CreateUser";
 import { notoSerif } from "@/assets/font";
 
-// Mock data for users
 const mockUsers = [
   {
     id: 1,
@@ -78,37 +77,13 @@ const mockUsers = [
 ];
 
 const Users = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(10);
 
-  // Filter users based on search query
-  const filteredUsers = mockUsers.filter(
-    (user) =>
-      user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      user.age.includes(searchQuery) ||
-      user.gender.toLowerCase().includes(searchQuery.toLowerCase())
-  );
 
   const totalUsers = 294;
   const activeUsers = 203;
   const inactiveUsers = 127;
   const averageSessionTime = "31m 20s";
-  const totalPages = Math.ceil(totalUsers / itemsPerPage);
-
-  const handleSearch = (query: string) => {
-    setSearchQuery(query);
-    setCurrentPage(1);
-  };
-
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-  };
-
-  const handleItemsPerPageChange = (items: number) => {
-    setItemsPerPage(items);
-    setCurrentPage(1);
-  };
+  const totalPages = 58
 
   return (
     <main className="w-full h-full p-10 flex flex-col gap-5 overflow-auto">
@@ -132,11 +107,11 @@ const Users = () => {
         </div>
       </section>
 
-      <SearchBar onSearch={handleSearch} />
+      <SearchBar />
 
       <section className="w-full max-md:max-w-full">
         <ul className="flex flex-col gap-2">
-          {filteredUsers.map((user, index) => (
+          {mockUsers.map((user, index) => (
             <UserCard
               key={user.id}
               initials={user.initials}
@@ -153,12 +128,8 @@ const Users = () => {
       </section>
       
       <FooterUsers
-        currentPage={currentPage}
         totalPages={totalPages}
         totalItems={totalUsers}
-        itemsPerPage={itemsPerPage}
-        onPageChange={handlePageChange}
-        onItemsPerPageChange={handleItemsPerPageChange}
       />
     </main>
 

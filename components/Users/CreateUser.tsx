@@ -20,14 +20,12 @@ export const CreateUser = ()=>{
     const [isOpen , setIsOpen] = useState(false)
 
     return(
-        <Sheet open={isOpen}>
-            <SheetTrigger>
-                <Button onClick={()=>{
-                    setIsOpen(true)
-                }} className="bg-primary text-white text-sm rounded-full flex items-center gap-2 hover:bg-primary">
+        <Sheet open={isOpen} onOpenChange={(open)=> setIsOpen(open)}>
+            <SheetTrigger onClick={()=> setIsOpen(true) }>
+                <div className="py-3 px-4 bg-primary text-white text-sm rounded-full flex items-center gap-2 hover:bg-primary">
                     <Plus width={16} height={16} />
                     Adicionar 
-                </Button>
+                </div>  
             </SheetTrigger>
             <SheetContent className="bg-white w-3/6 sm:max-w-[560px] p-10" >
                 <SheetHeader>

@@ -15,10 +15,12 @@ export const Sidebar = () => {
 
             </div>
 
-            <Button className="w-[240px] bg-transparent absolute left-0 bottom-4 text-sm text-primary flex items-center justify-between px-4 h-10 font-normal">
-                Precisa de ajuda?
-                <Headset width={16} height={16} />
-            </Button>
+            <div className="w-[240px] absolute left-0 bottom-4 px-4">
+                <Button className="w-full bg-transparent text-sm text-primary flex items-center justify-between px-4 h-10 font-normal">
+                    Precisa de ajuda?
+                    <Headset width={16} height={16} />
+                </Button>
+            </div>
 
         </aside>
     )

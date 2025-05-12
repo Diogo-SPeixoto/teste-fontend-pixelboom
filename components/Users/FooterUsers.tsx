@@ -9,16 +9,12 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "../ui/select";
 
 
 interface FooterUsersProps {
-  currentPage: number;
   totalPages: number;
   totalItems: number;
-  itemsPerPage: number;
-  onPageChange: (page: number) => void;
-  onItemsPerPageChange: (itemsPerPage: number) => void;
-  className?: string;
 }
 
 export const FooterUsers: React.FC<FooterUsersProps> = ({
@@ -55,24 +51,19 @@ export const FooterUsers: React.FC<FooterUsersProps> = ({
         >
           Itens por página
         </div>
-        <div
-          className="text-zinc-900 whitespace-nowrap gap-2"
-        >
-          <div
-            className="justify-between items-center border border-[--background] flex min-h-10 w-full overflow-hidden h-10 pr-3 pl-3 bg-[#FFF] py-2 rounded-md border-solid"
-          >
-            <select
-              className="text-zinc-900 text-ellipsis font-normal self-stretch flex-1 shrink basis-[0%] my-auto bg-transparent border-none outline-none appearance-none"
-              value={10}
-            >
-              <option value="5">5</option>
-              <option value="10">10</option>
-              <option value="20">20</option>
-              <option value="50">50</option>
-            </select>
-            <ChevronDown width={16} height={16} />
-          </div>
-        </div>
+        <Select>
+          <SelectTrigger iconSecondary={true} className="w-[70px]">
+            <SelectValue placeholder="10" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectItem  value="10">20</SelectItem>
+              <SelectItem value="20">20</SelectItem>
+              <SelectItem value="30">30</SelectItem>
+              <SelectItem value="40">40</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
       </div>
     </div>
   );

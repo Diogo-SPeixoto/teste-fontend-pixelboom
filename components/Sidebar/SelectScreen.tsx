@@ -29,25 +29,23 @@ export const SelectScreen = () => {
 
     return (
         <nav className="flex flex-col gap-1.5">
-            <p className="text-[--sidebar-foreground] text-xs p-2 mb-1.5">Menu</p>
+            <p className="text-sidebar-foreground text-xs p-2 mb-1.5">Menu</p>
             {
                 menuData.map((item) => (
                     <ItemSidebar
                         key={item.name} 
                         Icon={item.icon} 
-                        onClick={item.onClick} 
                         isActive={screen === item.name}
                         name={item.name}
                     />
                 ))
             }
 
-            <p className="text-[--sidebar-foreground] text-xs p-2 mb-1.5">Configurações</p>
+            <p className="text-sidebar-foreground text-xs p-2 mb-1.5">Configurações</p>
             <ItemSidebar
                 Icon={Settings}
                 isActive={screen === "Geral"}
                 name="Geral"
-                onClick={() => setScreen("Geral")}
 
             />
         </nav>

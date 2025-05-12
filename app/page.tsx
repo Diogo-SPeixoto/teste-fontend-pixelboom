@@ -1,5 +1,5 @@
-import { Header } from "@/components/Header";
 import { Sidebar } from "@/components/Sidebar";
+import { Header } from "@/components/Header";
 import Users from "@/pages/Users";
 
 export default function Home() {
