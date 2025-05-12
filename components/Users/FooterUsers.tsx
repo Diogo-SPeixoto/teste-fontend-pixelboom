@@ -1,4 +1,3 @@
-import { ChevronDown } from "lucide-react";
 import React from "react";
 import {
   Pagination,
@@ -9,7 +8,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "../ui/select";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 
 
 interface FooterUsersProps {

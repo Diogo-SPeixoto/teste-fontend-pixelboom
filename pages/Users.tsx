@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React from "react";
 import { StatCard } from "../components/Users/StatCard";
 import { SearchBar } from "../components/Users/SearchBar";
 import { UserCard } from "../components/Users/UserCard";
@@ -111,7 +111,7 @@ const Users = () => {
 
       <section className="w-full max-md:max-w-full">
         <ul className="flex flex-col gap-2">
-          {mockUsers.map((user, index) => (
+          {mockUsers.map((user) => (
             <UserCard
               key={user.id}
               initials={user.initials}
